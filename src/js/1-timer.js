@@ -1,7 +1,9 @@
 // Описаний в документації
 import flatpickr from 'flatpickr';
+import iziToast from 'izitoast';
 // Додатковий імпорт стилів
 import 'flatpickr/dist/flatpickr.min.css';
+import 'izitoast/dist/css/iziToast.min.css';
 
 // Initialization of the timer
 let endTime = null;
@@ -90,7 +92,15 @@ function closeHandler(selectedDates) {
   const selectedDate = selectedDates[0];
   const currentDate = new Date();
   if (selectedDate < currentDate) {
-    window.alert('Please choose a date in the future');
+    iziToast.show({
+      message: 'Please choose a date in the future',
+      messageColor: '#2e2f42',
+      backgroundColor: '#e74c3c',
+      position: 'topCenter',
+      transitionIn: 'bounceInDown',
+      transitionOut: 'bounceOutUp',
+      timeout: 1500,
+    });
     startBtn.disabled = true;
     return;
   }

@@ -79,11 +79,13 @@ button {
   color: #ffffff;
   text-align: center;
 }
+
+button:hover {
+  background-color: #6c8cff;
+}
+
 button:disabled {
   background-color: #cfcfcf;
   color: #989898;
   cursor: not-allowed;
-}
-button:hover {
-  background-color: #6c8cff;
 }
